@@ -1,5 +1,6 @@
 # Totally-not-odido-parser-v2
 ![Screenshot](screen.png)
+
 Local viewer for large `dataset.txt` files.
 
 Run one command, the web app comes online immediately, and data is ingested/indexed in the background.
@@ -21,6 +22,26 @@ Then open:
 
 - `http://localhost:8080/` (search UI)
 - `http://localhost:8080/analytics` (analytics UI)
+
+## Docker
+
+Build image:
+
+```bash
+docker build -t totally-not-odido-parser-v2:latest .
+```
+
+Multi-arch build (AMD64 + ARM64) with Buildx:
+
+```bash
+docker buildx build --platform linux/amd64,linux/arm64 -t totally-not-odido-parser-v2:latest .
+```
+
+Run container (dataset/db from host folder):
+
+```bash
+docker run --rm -p 8080:8080 -v "$(pwd):/data" totally-not-odido-parser-v2:latest
+```
 
 ## What the app does
 
