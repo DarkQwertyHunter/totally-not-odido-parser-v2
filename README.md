@@ -1,4 +1,5 @@
 # Totally-not-odido-parser-v2
+![Screenshot](screen.png)
 
 Lokale viewer voor grote `dataset.txt` bestanden.
 
